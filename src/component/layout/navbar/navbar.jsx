@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import {
     Search,
     Menu,
-    MoreVertical,
-    User,
-    Bell,
     ChevronDown,
-    X
+    X,
+    Bookmark
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -45,19 +43,16 @@ const Navbar = () => {
 
                 {/* Right Side - Icons, Search, and Profile */}
                 <div className="flex items-center space-x-4">
-                    {/* More Options (3 dots vertical) */}
-                    <button className="p-2 text-gray-500 hover:text-gray-700">
-                        <MoreVertical size={20} />
-                    </button>
-
-                    {/* Search Bar */}
+                    {/* Search Bar with Search Icon inside */}
                     <div className="relative">
+                        <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                            <Search className="text-gray-400" size={18} />
+                        </div>
                         <input
                             type="text"
                             placeholder="Search Anything"
-                            className="w-64 px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-600"
+                            className="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-600"
                         />
-                        <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
                     </div>
 
                     {/* Profile */}
@@ -69,9 +64,9 @@ const Navbar = () => {
                         <ChevronDown size={16} className="text-gray-500" />
                     </div>
 
-                    {/* Bookmark/Save Icon */}
+                    {/* Bookmark Icon */}
                     <button className="p-2 text-gray-500 hover:text-gray-700">
-                        <div className="w-5 h-5 border-2 border-gray-400 rounded-sm"></div>
+                        <Bookmark size={20} />
                     </button>
                 </div>
             </div>
@@ -79,29 +74,27 @@ const Navbar = () => {
             {/* Mobile Navbar */}
             <div className="md:hidden bg-gray-100">
                 <div className="flex items-center p-4 space-x-4">
-                    {/* Menu Button */}
+                    {/* Menu Button with hamburger lines */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm"
+                        className="w-12 h-12 bg-white rounded-lg flex flex-col items-center justify-center shadow-sm space-y-1"
                     >
-                        <Menu size={20} className="text-gray-700" />
+                        <div className="w-5 h-0.5 bg-gray-800"></div>
+                        <div className="w-5 h-0.5 bg-gray-800"></div>
+                        <div className="w-5 h-0.5 bg-gray-800"></div>
                     </button>
 
-                    {/* More Options (3 dots vertical) */}
-                    <button className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
-                        <MoreVertical size={20} className="text-gray-700" />
-                    </button>
 
-                    {/* Search Bar - Full Width */}
+                    {/* Search Bar - Full Width with search icon inside */}
                     <div className="flex-1 relative">
+                        <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                            <Search className="text-gray-400" size={16} />
+                        </div>
                         <input
                             type="text"
                             placeholder="Search Anything"
-                            className="w-full px-4 py-3 pr-12 bg-white rounded-lg shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-600"
+                            className="w-full pl-12 pr-12 py-3 bg-white rounded-lg shadow-sm border-0 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-600"
                         />
-                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center">
-                            <Search className="text-white" size={16} />
-                        </div>
                     </div>
                 </div>
 

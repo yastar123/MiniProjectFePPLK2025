@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 
 const videoData = [
   {
@@ -45,13 +45,11 @@ const videoData = [
 ];
 
 function LatestVideos() {
-
-
   const featuredVideo = videoData[0];
   const sideVideos = videoData.slice(1);
 
   return (
-    <div className="col-span-full bg-white font-sans p-5 md:px-10">
+    <div className="col-span-full bg-white font-sans  my-10 md:my-16  p-5 md:px-10">
       {/* Header dengan judul dan tombol panah (hanya visual) */}
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-2xl font-bold text-gray-900">

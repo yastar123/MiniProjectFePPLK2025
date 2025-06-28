@@ -43,7 +43,7 @@ const TrendyPost = () => {
 
     return (
         // judul + button
-        <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className=" flex flex-col items-center justify-center">
 
             {/* responsive1 */}
         <div className="relative w-full max-w-[90rem] mx-auto p-1 lg:w-[100%]">

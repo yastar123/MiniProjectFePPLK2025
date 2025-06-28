@@ -1,4 +1,4 @@
-import { Sun, Cloud, CloudRain, CloudSnow } from "lucide-react"
+import { Sun, Cloud, CloudRain, CloudSnow } from "lucide-react";
 
 const Weather = () => {
   const hourlyData = [
@@ -10,7 +10,7 @@ const Weather = () => {
     { time: "8 PM", temp: 28 },
     { time: "11 PM", temp: 29 },
     { time: "2 AM", temp: 21 },
-  ]
+  ];
 
   const weeklyForecast = [
     { day: "Tue", icon: Sun, temp: "29°", tempLow: "20°" },
@@ -21,7 +21,7 @@ const Weather = () => {
     { day: "Sun", icon: CloudSnow, temp: "29°", tempLow: "20°" },
     { day: "Mon", icon: CloudRain, temp: "30°", tempLow: "20°" },
     { day: "Tue", icon: CloudRain, temp: "30°", tempLow: "20°" },
-  ]
+  ];
 
   const cities = [
     {
@@ -64,10 +64,10 @@ const Weather = () => {
       bg: "bg-gradient-to-br from-purple-400 to-purple-600",
       icon: Cloud,
     },
-  ]
+  ];
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50  my-10 md:my-16">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main weather card */}
@@ -98,7 +98,9 @@ const Weather = () => {
               <div className="flex items-end justify-between h-32 mb-4">
                 {hourlyData.map((item, index) => (
                   <div key={index} className="flex flex-col items-center">
-                    <div className="text-xs text-gray-600 mb-2">{item.temp}</div>
+                    <div className="text-xs text-gray-600 mb-2">
+                      {item.temp}
+                    </div>
                     <div
                       className="w-2 bg-yellow-300 rounded-full"
                       style={{ height: `${(item.temp / 30) * 80}px` }}
@@ -116,7 +118,7 @@ const Weather = () => {
             {/* Weekly forecast */}
             <div className="grid grid-cols-8 gap-4">
               {weeklyForecast.map((day, index) => {
-                const IconComponent = day.icon
+                const IconComponent = day.icon;
                 return (
                   <div key={index} className="text-center">
                     <div className="text-sm font-medium mb-2">{day.day}</div>
@@ -125,17 +127,17 @@ const Weather = () => {
                         day.icon === Sun
                           ? "text-yellow-400"
                           : day.icon === Cloud
-                            ? "text-gray-400"
-                            : day.icon === CloudRain
-                              ? "text-blue-400"
-                              : "text-blue-300"
+                          ? "text-gray-400"
+                          : day.icon === CloudRain
+                          ? "text-blue-400"
+                          : "text-blue-300"
                       }`}
                       size={24}
                     />
                     <div className="text-sm font-medium">{day.temp}</div>
                     <div className="text-xs text-gray-500">{day.tempLow}</div>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
@@ -143,7 +145,7 @@ const Weather = () => {
           {/* City cards */}
           <div className="grid grid-cols-2 gap-4">
             {cities.map((city, index) => {
-              const IconComponent = city.icon
+              const IconComponent = city.icon;
               return (
                 <div
                   key={index}
@@ -180,16 +182,21 @@ const Weather = () => {
 
                   {/* Background overlay */}
                   <div className="absolute inset-0 opacity-80">
-                    <div className={`w-full h-full ${city.bg.replace("bg-gradient-to-br", "bg-gradient-to-br")}`}></div>
+                    <div
+                      className={`w-full h-full ${city.bg.replace(
+                        "bg-gradient-to-br",
+                        "bg-gradient-to-br"
+                      )}`}
+                    ></div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Weather
+export default Weather;

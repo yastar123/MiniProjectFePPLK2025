@@ -4,6 +4,7 @@ import Layout from './component/layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Banner from './component/banner';
 
 function App() {
   return (

@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.category-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  
+  max-width: 1512px; 
+  width: 95%;       
+  height: 68px;
+  margin: 20px auto;
+  
+  
+  background-color: #F5F5F5;
+  border-radius: 12px; 
+  padding: 0 15px;   
+}
+
+.category-scroller {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 60px; 
+  gap: 15px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+
+.category-tag {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 48px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.category-tag:hover {
+  transform: scale(1.05);
+  filter: blur(1px);
+}
+
+.tag-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.category-tag span {
+  position: relative;
+  z-index: 2;
+}
+
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Font Awesome 6 Free ;
+}
+
+
+.scroll-button.left {
+  left: 15px; 
+}
+
+
+.scroll-button.right {
+  right: 15px; 
+}
+
+
+.scroll-button:hover {
+  background-color: #e0e0e0; 
+}
+

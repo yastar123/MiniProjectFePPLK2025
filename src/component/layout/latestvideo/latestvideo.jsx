@@ -1,8 +1,5 @@
-// src/components/LatestVideos.js
+import React from "react"; 
 
-import React from "react"; // Kita hanya perlu React, tidak perlu hook lain
-
-// 1. Data sekarang berisi TEPAT 5 video yang ingin ditampilkan.
 const videoData = [
   {
     id: 1,
@@ -49,7 +46,7 @@ const videoData = [
 
 function LatestVideos() {
 
-  // Langsung pisahkan data: 1 untuk utama, 4 untuk sampingan.
+
   const featuredVideo = videoData[0];
   const sideVideos = videoData.slice(1);
 
@@ -62,7 +59,6 @@ function LatestVideos() {
           Latest Videos
         </h2>
         <div className="flex space-x-2">
-          {/* 3. Tombol panah hanya untuk hiasan, onClick tidak melakukan apa-apa */}
           <button
             className="w-8 h-8 bg-gray-200 rounded-md flex items-center justify-center text-gray-400 cursor-default"
             aria-label="Previous Videos"
@@ -78,9 +74,8 @@ function LatestVideos() {
         </div>
       </div>
 
-      {/* Grid Video (Struktur visual tidak diubah) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {/* Kolom Kiri: Video Utama */}
+        {/* Video Utama */}
         {featuredVideo && (
           <div className="relative rounded-lg overflow-hidden shadow-lg group drop-shadow-sm">
             <div
@@ -118,7 +113,7 @@ function LatestVideos() {
           </div>
         )}
 
-        {/* Kolom Kanan: 4 Video Kecil */}
+        {/* 4 Video Kecil */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {sideVideos.map((video) => (
             <div

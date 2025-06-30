@@ -59,7 +59,7 @@ const Banner = () => {
               <h3 className="font-bold text-gray-800">Jun 2022</h3>
             </div>
 
-            {/* Calendar Header */}
+            {/* Header */}
             <div className="grid grid-cols-7 gap-1 mb-2">
               {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
                 <div key={day} className="text-center text-xs font-medium text-gray-500 p-1">
@@ -68,7 +68,7 @@ const Banner = () => {
               ))}
             </div>
 
-            {/* Calendar Days */}
+            {/* Hari Kalender */}
             <div className="grid grid-cols-7 gap-1">
               {calendarDays.map((day, index) => (
                 <div
@@ -83,7 +83,7 @@ const Banner = () => {
             </div>
           </div>
 
-          {/* Card 2: League Table */}
+          {/* Card2 */}
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="flex items-center mb-4">
               <Trophy className="text-yellow-600 mr-2" size={20} />

@@ -29,7 +29,7 @@ const Navbar = () => {
                     {/* Navigation Links */}
                     <div className="flex items-center space-x-6">
                         <div className="flex items-center space-x-1 text-gray-700 hover:text-orange-500 cursor-pointer">
-                            <span>Categories</span>
+                            <a href='/category'>Categories</a>
                             <ChevronDown size={16} />
                         </div>
                         <div className="flex items-center space-x-1 text-gray-700 hover:text-orange-500 cursor-pointer">

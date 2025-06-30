@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
+import Category from './pages/Category';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/category" element={<Category />} />
         </Routes>
       </Layout>
     </Router>

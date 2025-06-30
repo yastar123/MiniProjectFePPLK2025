@@ -27,7 +27,7 @@ const contactDetails = [
 function ContactInfo() {
   return (
     // Section utama dengan latar belakang abu-abu sangat muda
-    <section className="bg-gray-50 py-12">
+    <section className="pb-12">
       {/* Wadah utama yang berada di tengah halaman dengan lebar maksimum */}
       <div className="max-w-screen-xl mx-auto p-8 bg-white rounded-2xl shadow-sm">
         {/*2 kolom di layar besar */}

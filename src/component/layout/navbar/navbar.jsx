@@ -21,10 +21,10 @@ const Navbar = () => {
                 {/* Left Side - Logo and Navigation */}
                 <div className="flex items-center space-x-8">
                     {/* Logo */}
-                    <div className="flex items-center">
+                    <a href="/" className="flex items-center">
                         <span className="text-xl font-bold text-orange-500">MEGA</span>
                         <span className="text-xl font-bold text-gray-700">.news</span>
-                    </div>
+                    </a>
 
                     {/* Navigation Links */}
                     <div className="flex items-center space-x-6">
@@ -37,7 +37,7 @@ const Navbar = () => {
                             <ChevronDown size={16} />
                         </div>
                         <span className="text-gray-700 hover:text-orange-500 cursor-pointer">Contact Us</span>
-                        <span className="text-gray-700 hover:text-orange-500 cursor-pointer">About Us</span>
+                        <a href="/about" className="text-gray-700 hover:text-orange-500 cursor-pointer">About Us</a>
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
                                         <ChevronDown size={16} />
                                     </div>
                                     <div className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">Contact Us</div>
-                                    <div className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About Us</div>
+                                    <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About Us</a>
                                 </div>
                             </div>
                         </div>

@@ -79,7 +79,7 @@ function LatestVideos() {
         {featuredVideo && (
           <div className="relative rounded-lg overflow-hidden shadow-lg group drop-shadow-sm">
             <div
-              className="w-[1000px] h-[444px] bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
               style={{ backgroundImage: `url(${featuredVideo.thumbnail})` }}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20">

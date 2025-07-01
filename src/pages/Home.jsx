@@ -1,16 +1,33 @@
-import React from "react";
+
+import React, { useEffect } from "react";
 import Banner from "../component/banner/banner";
 import Weather from "../component/weather/weather";
 import TrendyPost from "../component/TrendyPost/TrendyPost";
-import ComponentTeam from "../component/ComponentTeam/ComponentTeam";
-import ContactInfo from "../component/contactinfo/contactinfo";
 import LatestVideos from "../component/latestvideo/latestvideo";
 import PopularPost from "../component/PopularPost/PopularPost";
 import Category from "../component/Category/Category";
+import useLoading from "../hooks/useLoading";
+import Loading from "../component/Loading/Loading";
 
 const Home = () => {
+  const { isLoading, withLoading } = useLoading(true);
+
+  useEffect(() => {
+    const simulateLoading = async () => {
+      await withLoading(async () => {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }, "Memuat Konten...");
+    };
+    simulateLoading();
+  }, [withLoading]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center ">
+    <div className="min-h-screen">
+      <HeroAbout />
       <Category />
       <PopularPost />
       <Banner />
@@ -20,5 +37,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

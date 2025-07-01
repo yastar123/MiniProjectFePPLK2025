@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+       boxShadow: {
+        'neumorphic': '7px 7px 15px #bebebe, -7px -7px 15px #ffffff',
+        'neumorphic-inset': 'inset 7px 7px 15px #bebebe, inset -7px -7px 15px #ffffff',
+      }
+    },
   },
   plugins: [],
 }

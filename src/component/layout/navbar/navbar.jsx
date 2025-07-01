@@ -56,7 +56,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Profile */}
-                    <div className="flex items-center space-x-2">
+                    <div className="lg:flex hidden items-center space-x-2">
                         <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
                             <span className="text-white text-sm font-medium">B</span>
                         </div>

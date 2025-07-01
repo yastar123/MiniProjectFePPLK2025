@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import PopularPost from './component/popularPost/PopularPost';
 import TrendyPost from './component/TrendyPost/TrendyPost';
 import ComponentTeam from './component/ComponentTeam/ComponentTeam';
+import Sidebar from './component/SideBar/SideBar'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <PopularPost />
           <TrendyPost />
           <ComponentTeam />
+          <Sidebar />
       {/* </Layout> */}
     </Router>
   );

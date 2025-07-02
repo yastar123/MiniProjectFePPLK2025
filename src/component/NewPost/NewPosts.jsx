@@ -1,16 +1,16 @@
 import { Bookmark } from 'lucide-react';
-import gambar1 from '../assets/img/newpost/gambar1.png';
-import JonKantner from '../assets/img/newpost/let1.png';
-import gambar2 from '../assets/img/newpost/gambar2.png';
-import James from '../assets/img/newpost/let2.png';
-import gambar3 from '../assets/img/newpost/gambar3.png';
-import Linda from '../assets/img/newpost/let3.png';
-import gambar4 from '../assets/img/newpost/gambar4.png';
-import LouisHoebregts from '../assets/img/newpost/let4.png';
-import gambar5 from '../assets/img/newpost/gambar5.png';
-import CassieEvans from '../assets/img/newpost/let5.png';
-import gambar6 from '../assets/img/newpost/gambar6.png';
-import Patricia from '../assets/img/newpost/let6.png';
+import gambar1 from '../../assets/img/newpost/gambar1.png';
+import JonKantner from '../../assets/img/newpost/let1.png';
+import gambar2 from '../../assets/img/newpost/gambar2.png';
+import James from '../../assets/img/newpost/let2.png';
+import gambar3 from '../../assets/img/newpost/gambar3.png';
+import Linda from '../../assets/img/newpost/let3.png';
+import gambar4 from '../../assets/img/newpost/gambar4.png';
+import LouisHoebregts from '../../assets/img/newpost/let4.png';
+import gambar5 from '../../assets/img/newpost/gambar5.png';
+import CassieEvans from '../../assets/img/newpost/let5.png';
+import gambar6 from '../../assets/img/newpost/gambar6.png';
+import Patricia from '../../assets/img/newpost/let6.png';
 
 const NewPosts = () => {
   const posts = [
@@ -71,7 +71,7 @@ const NewPosts = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto mt-16 bg-gray-50">
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">

@@ -28,16 +28,8 @@ const Navbar = () => {
 
                     {/* Navigation Links */}
                     <div className="flex items-center space-x-6">
-                        <div className="flex items-center space-x-1 text-gray-700 hover:text-orange-500 cursor-pointer">
-                            <a href='/category'>Categories</a>
-                            <ChevronDown size={16} />
-                        </div>
-                        <div className="flex items-center space-x-1 text-gray-700 hover:text-orange-500 cursor-pointer">
-                            <span>Pages</span>
-                            <ChevronDown size={16} />
-                        </div>
-                        <span className="text-gray-700 hover:text-orange-500 cursor-pointer">Contact Us</span>
-                        <a href="/about" className="text-gray-700 hover:text-orange-500 cursor-pointer">About Us</a>
+                        <a href="/contact" className="text-gray-700 hover:text-orange-500 cursor-pointer">Contact</a>
+                        <a href="/about" className="text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
                     </div>
                 </div>
 
@@ -128,16 +120,8 @@ const Navbar = () => {
 
                                 {/* Navigation Links */}
                                 <div className="space-y-3">
-                                    <div className="flex items-center justify-between py-2 text-gray-700 hover:text-orange-500 cursor-pointer">
-                                        <span>Categories</span>
-                                        <ChevronDown size={16} />
-                                    </div>
-                                    <div className="flex items-center justify-between py-2 text-gray-700 hover:text-orange-500 cursor-pointer">
-                                        <span>Pages</span>
-                                        <ChevronDown size={16} />
-                                    </div>
-                                    <div className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">Contact Us</div>
-                                    <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About Us</a>
+                                    <a href="/contact" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">Contact</a>
+                                    <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
                                 </div>
                             </div>
                         </div>

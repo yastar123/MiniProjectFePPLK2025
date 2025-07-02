@@ -1,14 +1,13 @@
 import React from 'react';
 import { FaBookmark } from 'react-icons/fa';
-
-import cod from '../assets/img/toppost/cod.png';
-import avatarJames from '../assets/img/toppost/gambar1.png';
-import cod1 from '../assets/img/toppost/cod1.png';
-import avatarRobert from '../assets/img/toppost/gambar2.png';
-import cod2 from '../assets/img/toppost/cod2.png';
-import avatarMary from '../assets/img/toppost/gambar3.png';
-import cod3 from '../assets/img/toppost/cod3.png';
-import avatarJonKanter from '../assets/img/toppost/gambar4.png';
+import cod from '../../assets/img/toppost/cod.png';
+import avatarJames from '../../assets/img/toppost/gambar1.png';
+import cod1 from '../../assets/img/toppost/cod1.png';
+import avatarRobert from '../../assets/img/toppost/gambar2.png';
+import cod2 from '../../assets/img/toppost/cod2.png';
+import avatarMary from '../../assets/img/toppost/gambar3.png';
+import cod3 from '../../assets/img/toppost/cod3.png';
+import avatarJonKanter from '../../assets/img/toppost/gambar4.png';
 
 const TopPosts = () => {
   const posts = [
@@ -51,11 +50,11 @@ const TopPosts = () => {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
+    <div className="p-4 rounded-lg shadow-md mb-16">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">Top Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {posts.map((post) => (
-          <div key={post.id} className="relative bg-gray-50 p-3 rounded-lg shadow border border-blue-300 hover:border-blue-500 transition duration-200">
+          <div key={post.id} className="relative bg-gray-50 p-3 rounded-lg shadow border border-gray-200">
             <img src={post.image} alt={post.title} className="w-full h-32 object-cover rounded-t-lg" />
             <div className="p-3">
               <h3 className="text-lg font-semibold text-gray-900 mb-1">{post.title}</h3>

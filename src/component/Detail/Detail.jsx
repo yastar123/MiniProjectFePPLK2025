@@ -50,7 +50,7 @@ const Detail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="w-full bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-8">

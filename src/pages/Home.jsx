@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Banner from "../component/banner/banner";
 import Weather from "../component/weather/weather";

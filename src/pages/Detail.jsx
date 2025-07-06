@@ -1,6 +1,6 @@
 import React from "react";
 import DetailComponent from "../component/Detail/Detail";
-import Sidebar from "../component/Sidebar/Sidebar";
+import Sidebar from "../component/Sidebar/SideBar";
 
 const Detail = () => {
   return (

@@ -4,7 +4,7 @@ import Weather from "../component/weather/weather";
 import TrendyPost from "../component/TrendyPost/TrendyPost";
 import LatestVideos from "../component/latestvideo/latestvideo";
 import PopularPost from "../component/PopularPost/PopularPost";
-import Category from "../component/Category/Category";
+import Category from "../component/category/category";
 import useLoading from "../hooks/useLoading";
 import Loading from "../component/Loading/Loading";
 import NewPosts from "../component/NewPost/NewPosts";

@@ -1,0 +1,24 @@
+services:
+  # Backend API Service
+  - type: web
+    name: news-api-backend
+    env: node
+    plan: free
+    buildCommand: cd backend/api && npm install
+    startCommand: cd backend/api && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEWS_API_KEY
+        sync: false  # You'll need to set this in Render dashboard
+
+  # Frontend Service
+  - type: web
+    name: news-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://news-api-backend.onrender.com 

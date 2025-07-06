@@ -11,13 +11,13 @@ const NewsApi = axios.create({
 });
 
 export const getNews = async () => {
-    try {
-        const response = await axios.get("http://localhost:3001/api/news");
-        return response.data;
-    } catch (error) {
-        console.error("Error fetching news from backend:", error);
-        return { articles: [] };
-    }
+  try {
+    const response = await axios.get("http://localhost:3001/api/news");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching Tesla news:", error);
+    return { articles: [] };
+  }
 };
 
 

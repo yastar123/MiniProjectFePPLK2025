@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
-import user1 from '../assets/img/comments/user1.png'; 
-import user2 from '../assets/img/comments/user2.png'; 
-import user3 from '../assets/img/comments/user3.png'; 
-import user4 from '../assets/img/comments/user4.png'; 
+import user1 from '../../assets/img/comments/user1.png'; 
+import user2 from '../../assets/img/comments/user2.png'; 
+import user3 from '../../assets/img/comments/user3.png'; 
+import user4 from '../../assets/img/comments/user4.png'; 
 
 const Comments = () => {
   const [comments] = useState([
@@ -73,7 +73,7 @@ const Comments = () => {
   const ratingColors = ['bg-red-100 text-red-600', 'bg-red-100 text-red-600', 'bg-yellow-100 text-yellow-600', 'bg-blue-100 text-blue-600', 'bg-green-100 text-green-600'];
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white">
+    <div className="max-w-4xl mx-auto p-2 my-10 md:p-6 bg-white">
       {/* Comments Header */}
       <div className="flex items-center mb-8">
         <div className="w-1 h-6 bg-red-500 rounded-full mr-3"></div>
@@ -186,7 +186,7 @@ const Comments = () => {
           <div className="flex items-center justify-between pt-4">
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium text-gray-700">Rate The Usefulness Of The Article</span>
-              <div className="flex gap-1">
+              <div className="hidden md:flex gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button key={star} type="button" onClick={() => setRating(star)} className={`w-8 h-8 rounded-full text-lg transition-colors ${star <= rating ? ratingColors[star - 1] : 'bg-gray-100 text-gray-400 hover:bg-gray-200'}`}>
                     {ratingEmojis[star - 1]}

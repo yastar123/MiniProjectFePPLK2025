@@ -40,13 +40,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {articles.map((article, idx) => (
-        <div key={idx}>
-          <h2>{article.title}</h2>
-          <p>{article.description}</p>
-          <img src={article.urlToImage} alt={article.title} />
-        </div>
-      ))}
       <Category />
       <PopularPost />
       <Banner />

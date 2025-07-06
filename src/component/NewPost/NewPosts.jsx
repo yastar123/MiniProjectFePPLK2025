@@ -71,7 +71,7 @@ const NewPosts = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto mt-16 bg-gray-50">
+    <div className="max-w-7xl p-2 mx-auto mt-16 bg-gray-50">
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ const NewPosts = () => {
           <div key={post.id} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
             <div className="flex">
               {/* Image */}
-              <div className="w-48 h-32 flex-shrink-0">
+              <div className="w-48 h-44 md:h-32 flex-shrink-0">
                 <img src={post.image || '/placeholder.svg'} alt={post.title} className="w-full h-full object-cover" />
               </div>
 

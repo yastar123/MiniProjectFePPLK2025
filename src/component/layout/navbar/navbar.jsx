@@ -119,9 +119,13 @@ const Navbar = () => {
                                 </div>
 
                                 {/* Navigation Links */}
-                                <div className="space-y-3">
-                                    <a href="/contact" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">Contact</a>
-                                    <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
+                                <div className="space-y-3 ">
+                                    <div>
+                                        <a href="/contact" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">Contact</a>
+                                    </div>
+                                    <div>
+                                        <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

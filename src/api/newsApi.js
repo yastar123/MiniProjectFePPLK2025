@@ -6,24 +6,19 @@ const NewsApi = axios.create({
         "Content-Type": "application/json",
     },
     params: {
-        apiKey: "d10d59d55ef2425eb21f521ab4b1c5e3",
+        apiKey: "83ba9a81f286409ea3c7c53b8e022981",
     },
 });
 
 export const getNews = async () => {
     try {
-        const response = await NewsApi.get("everything", {
-            params: {
-                q: "tesla",
-                from: "2025-06-02",
-                sortBy: "publishedAt",
-            },
-        });
+        const response = await axios.get("http://localhost:3001/api/news");
         return response.data;
     } catch (error) {
-        console.error("Error fetching Tesla news:", error);
+        console.error("Error fetching news from backend:", error);
         return { articles: [] };
     }
 };
+
 
 export default NewsApi;

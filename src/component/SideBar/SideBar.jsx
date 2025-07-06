@@ -1,5 +1,6 @@
 import React from 'react'
 import ArticleDetail from '../artikelDetail/article-detail'
+import Comments from '../comments/Comments'
 
 const SideBar = () => {
   const dataPost = [
@@ -38,7 +39,7 @@ const SideBar = () => {
 
   return (
 
-    <div className="flex flex-col-reverse lg:flex-row-reverse p-1 max-w-[1840px] mx-auto">
+    <div className="flex flex-col-reverse lg:flex-row-reverse md:p-1 max-w-7xl mt-10 mx-auto">
       <aside className="w-full lg:w-1/3 flex flex-col items-center gap-6">
 
 
@@ -134,9 +135,10 @@ const SideBar = () => {
 
 
       {/* sigma mewing*/}
-      <div className="flex flex-col-reverse lg:flex-row-reverse gap-6 p-4 max-w-7xl mx-auto">
-        <main className="w-full lg:w-2/3 flex flex-col items-center gap-6">
+      <div className="flex flex-col-reverse lg:flex-row-reverse md:gap-6 md:p-4 mx-auto">
+        <main className="w-full justify-center flex flex-col items-center md:gap-6">
           <ArticleDetail />
+          <Comments />
         </main>
       </div>
 

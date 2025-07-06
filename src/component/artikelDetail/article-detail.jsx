@@ -2,9 +2,9 @@ import { Calendar, User, Tag, ArrowLeft, Share2, Bookmark, Heart } from "lucide-
 
 const ArticleDetail = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="w-full bg-white">
       {/* Header Image Section */}
-      <div className="relative h-96 overflow-hidden">
+      <div className="relative h-96 md:rounded-lg overflow-hidden">
         <img src="/src/assets/kapal.png" alt="Croatia Island Kayaking" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
@@ -28,7 +28,7 @@ const ArticleDetail = () => {
       </div>
 
       {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-4xl mx-auto p-2 md:px-6 md:py-8">
         {/* Article Meta */}
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
           <div className="flex items-center">

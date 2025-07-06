@@ -11,13 +11,14 @@ services:
         value: production
       - key: NEWS_API_KEY
         sync: false  # You'll need to set this in Render dashboard
+    healthCheckPath: /api/
 
   # Frontend Service (Static Site)
   - type: web
     name: news-frontend
     env: static
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
     envVars:
       - key: VITE_API_URL

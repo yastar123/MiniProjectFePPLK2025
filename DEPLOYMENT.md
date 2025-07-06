@@ -37,7 +37,7 @@ This project is configured to deploy both the backend API and frontend as separa
 1. Create a new Static Site in Render
 2. Connect your GitHub repository
 3. Configure the service:
-   - **Build Command**: `npm install && npm run build`
+   - **Build Command**: `npm ci && npm run build`
    - **Publish Directory**: `dist`
 4. Add environment variable:
    - Key: `VITE_API_URL`
@@ -57,6 +57,68 @@ VITE_API_URL=http://localhost:3001
 
 ## Troubleshooting
 
-- If you see "No open ports detected", make sure your backend service is properly configured with the correct start command
-- Ensure all environment variables are set in the Render dashboard
-- Check the build logs for any dependency installation issues 
+### Common Errors
+
+**Error "No open ports detected"**: 
+- Pastikan deploy sebagai 2 service terpisah
+- Jangan deploy sebagai Web Service tunggal
+- Gunakan `render.yaml` untuk deployment otomatis
+
+**Error "node eslint.config.js"**:
+- Sudah diperbaiki dengan menghapus `"main": "eslint.config.js"` dari package.json
+- Pastikan menggunakan konfigurasi yang benar di Render
+
+**Error "Could not resolve"**:
+- Pastikan semua import path menggunakan case sensitivity yang benar
+- File dan folder harus persis sama dengan import statement
+
+**Build failed with Rollup error**:
+- Pastikan semua dependencies terinstall dengan benar
+- Gunakan `npm ci` untuk install yang lebih konsisten
+- Periksa semua import statements
+
+### Alternative Deployment Options
+
+#### Vercel (Frontend Only)
+1. Connect your GitHub repository to Vercel
+2. Vercel will automatically detect it's a Vite project
+3. Set environment variable `VITE_API_URL` to your backend URL
+4. Deploy
+
+#### Netlify (Frontend Only)
+1. Connect your GitHub repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist`
+4. Set environment variable `VITE_API_URL`
+
+## File Structure for Deployment
+
+```
+📁 root/
+├── 📁 src/                 # Frontend React
+├── 📁 backend/
+│   └── 📁 api/            # Backend Express API
+│       └── server.js      # Server utama
+├── package.json           # Frontend dependencies
+├── render.yaml            # Konfigurasi Render deployment
+├── vercel.json            # Konfigurasi Vercel (alternatif)
+├── .npmrc                 # NPM configuration
+└── DEPLOYMENT.md          # Panduan deployment lengkap
+```
+
+## Health Check
+
+Backend service includes a health check endpoint at `/api/` that returns:
+```json
+{
+  "message": "API is running!"
+}
+```
+
+## Support
+
+If you encounter issues:
+1. Check the build logs in Render dashboard
+2. Verify all environment variables are set
+3. Ensure both services are deployed separately
+4. Check that the backend URL is correctly set in frontend environment variables 

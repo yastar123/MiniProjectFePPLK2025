@@ -21,7 +21,7 @@ const articleData = [
     thumbnail: "public/image/laptop.jpg",
     title: "How To Choose The Right Laptop For...",
     excerpt:
-      "Choosing The Right Laptop For Programming Can Be A Tough Process. It’s Easy To Get Confused...",
+      "Choosing The Right Laptop For Programming Can Be A Tough Process. It's Easy To Get Confused...",
     author: { name: "Louis Hoebregts", avatar: "public/image/louis.jpg" },
     date: "July 30, 2022",
   },
@@ -31,7 +31,7 @@ const articleData = [
     thumbnail: "public/image/cars.jpg",
     title: "How We Built The First Real Self-Driving Car",
     excerpt:
-      "Electric Self-Driving Cars Will Save Millions Of Lives And Significantly Accelerate The World’s...",
+      "Electric Self-Driving Cars Will Save Millions Of Lives And Significantly Accelerate The World's...",
     author: { name: "Mary", avatar: "public/image/mary.jpg" },
     date: "July 14, 2022",
   },
@@ -41,7 +41,7 @@ const articleData = [
     thumbnail: "public/image/setup.jpg",
     title: "How To Choose The Right Laptop For...",
     excerpt:
-      "Choosing The Right Laptop For Programming Can Be A Tough Process. It’s Easy To Get Confused...",
+      "Choosing The Right Laptop For Programming Can Be A Tough Process. It's Easy To Get Confused...",
     author: { name: "Robert", avatar: "public/image/louis.jpg" },
     date: "July 14, 2022",
   },
@@ -51,7 +51,7 @@ const articleData = [
     thumbnail: "public/image/food.jpg",
     title: "How To Persuade Your Parents To Buy Fast...",
     excerpt:
-      "Parents Often Don’t Want To Buy Fast Food, They May Be Worried That It’s Too Expensive, Unhealth...",
+      "Parents Often Don't Want To Buy Fast Food, They May Be Worried That It's Too Expensive, Unhealth...",
     author: { name: "Jon Kantner", avatar: "public/image/jon.jpg" },
     date: "May 10, 2024",
   },
@@ -71,7 +71,7 @@ const articleData = [
     thumbnail: "public/image/snow.jpg",
     title: "Self-Improvement Has Become An Extreme...",
     excerpt:
-      "What We’re Taught We Must Do Each Day To Develop And Be Successful Has Gone Out Of Control. We...",
+      "What We're Taught We Must Do Each Day To Develop And Be Successful Has Gone Out Of Control. We...",
     author: { name: "James", avatar: "public/image/james.jpg" },
     date: "July 14, 2022",
   },
@@ -81,7 +81,7 @@ const articleData = [
     thumbnail: "public/image/redcar.jpg",
     title: "Why Buying A New Car Makes More Sense...",
     excerpt:
-      "Many Experts Will Tell You Buying Cars Used Is Best For Your Long Term Financial Health. Here’s...",
+      "Many Experts Will Tell You Buying Cars Used Is Best For Your Long Term Financial Health. Here's...",
     author: { name: "Mary", avatar: "public/image/mary.jpg" },
     date: "July 14, 2022",
   },
@@ -91,7 +91,7 @@ const articleData = [
     thumbnail: "public/image/foods.jpg",
     title: "10 Cooking Lessons To Use In Everyday Life",
     excerpt:
-      "I Recently Stumbled Upon This Quote By Paul Theroux: “Cooking Requires Confident Guesstimates...",
+      "I Recently Stumbled Upon This Quote By Paul Theroux: \"Cooking Requires Confident Guesstimates...",
     author: { name: "Jon Kantner", avatar: "public/image/jon.jpg" },
     date: "July 14, 2022",
   },

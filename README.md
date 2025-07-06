@@ -77,3 +77,80 @@ Pull request dan masukan sangat terbuka! Silakan fork repository ini dan kirim P
 ## 📜 Lisensi
 
 Open-source untuk kebutuhan pembelajaran dan non-komersial.
+
+---
+
+## 🏗️ Struktur Project
+
+```
+📁 root/
+├── 📁 src/                 # Frontend React
+├── 📁 backend/
+│   └── 📁 api/            # Backend Express API
+│       └── server.js      # Server utama
+├── package.json           # Frontend dependencies
+├── render.yaml            # Konfigurasi Render deployment
+└── DEPLOYMENT.md          # Panduan deployment lengkap
+```
+
+## 🚀 Cara Deployment di Render
+
+### **PENTING**: Jangan deploy sebagai Web Service tunggal!
+
+Project ini harus di-deploy sebagai **2 service terpisah**:
+
+### 1. Backend API Service
+- **Type**: Web Service
+- **Build Command**: `cd backend/api && npm install`
+- **Start Command**: `cd backend/api && node server.js`
+- **Environment Variables**: 
+  - `NEWS_API_KEY` = API key dari NewsAPI.org
+
+### 2. Frontend Service  
+- **Type**: Static Site
+- **Build Command**: `npm install && npm run build`
+- **Publish Directory**: `dist`
+- **Environment Variables**:
+  - `VITE_API_URL` = URL backend service (contoh: `https://your-backend.onrender.com`)
+
+## 🔧 Development
+
+### Frontend
+```bash
+npm install
+npm run dev
+```
+
+### Backend
+```bash
+cd backend/api
+npm install
+node server.js
+```
+
+## 📋 Environment Variables
+
+### Backend (.env)
+```
+NEWS_API_KEY=your_news_api_key_here
+```
+
+### Frontend (.env)
+```
+VITE_API_URL=http://localhost:3001
+```
+
+## ⚠️ Troubleshooting
+
+**Error "No open ports detected"**: 
+- Pastikan deploy sebagai 2 service terpisah
+- Jangan deploy sebagai Web Service tunggal
+- Gunakan `render.yaml` untuk deployment otomatis
+
+**Error "node eslint.config.js"**:
+- Sudah diperbaiki dengan menghapus `"main": "eslint.config.js"` dari package.json
+- Pastikan menggunakan konfigurasi yang benar di Render
+
+## 📖 Dokumentasi Lengkap
+
+Lihat file `DEPLOYMENT.md` untuk panduan deployment yang lebih detail.

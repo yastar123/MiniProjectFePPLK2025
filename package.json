@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --port $PORT"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
@@ -33,7 +34,6 @@
     "vite": "^6.3.5"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PPLK-ITERA/Mini-Project-FrontEnd-PPLK2025.git"

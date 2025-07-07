@@ -10,17 +10,21 @@ const NewsApi = axios.create({
     },
 });
 
-// Use environment variable for API URL, fallback to localhost for development
-const API_BASE_URL = import.meta.env.VITE_API_URL || "https://miniprojectfepplk2025.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export const getNews = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/api/news`);
+    console.log("data API full", response.data);
+
+    if (!response.data || !response.data.articles) {
+      console.error("API returned invalid data:", response.data);
+      return { articles: [] };
+    }
+
     return response.data;
   } catch (error) {
     console.error("Error fetching Tesla news:", error);
     return { articles: [] };
   }
 };
-
-export default NewsApi;

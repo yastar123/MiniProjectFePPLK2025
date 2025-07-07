@@ -19,16 +19,15 @@ app.get("/api/news", async (req, res) => {
         const response = await axios.get("https://newsapi.org/v2/everything", {
             params: {
                 q: "tesla",
-                from: "2025-06-04",
-                sortBy: "publishedAt",
                 apiKey: process.env.NEWS_API_KEY,
             },
         });
+        console.log("NewsAPI response:", response.data);
         res.json(response.data);
     } catch (error) {
         console.error("Error fetching news:", error.message);
         if (error.response) {
-            res.status(error.response.status).json({ error: error.response.data });
+            res.status(error.response.status).json({ error: error.response.data, status: error.response.status });
         } else {
             res.status(500).json({ error: "Failed to fetch news" });
         }

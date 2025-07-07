@@ -1,104 +1,42 @@
 import React from "react";
-import { ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const Detail = () => {
-  const posts = [
-    {
-      id: 1,
-      image: "/public/image/detail2.png",
-      title: "House Boating On Lake Shasta",
-      description: "The Best Way To Spend A Long 4th Of July Weekend. Wake Boarding, Swimming, Barbecues, And Fishing On The Water.",
-      author: {
-        name: "James",
-        avatar: "/public/image/author1.jpg",
-        date: "July 14, 2022",
-      },
-    },
-    {
-      id: 2,
-      image: "/public/image/technology.jpg",
-      title: "How To Choose The Right Laptop For...",
-      description: "Choosing The Right Laptop For Programming Can Be A Tough Process. It's Easy To Get Confused While Researching The Various Options Available.",
-      author: {
-        name: "Robert",
-        avatar: "/public/image/author1.jpg",
-        date: "July 14, 2022",
-      },
-    },
-    {
-      id: 3,
-      image: "/public/image/detail1.png",
-      title: "Why Buying A New Car Makes More Sense...",
-      description: "Many Experts Will Tell You Buying Cars Used Is Best For Your Long-Term Financial Health. Here's Why New Is The Way To Go.",
-      author: {
-        name: "Mary",
-        avatar: "/public/image/author3.jpg",
-        date: "July 14, 2022",
-      },
-    },
-    {
-      id: 4,
-      image: "/public/image/food.jpg",
-      title: "Lasagna Is But A Pasta Cake",
-      description: "Re-Envision The Description Of A Common Food From A Different Perspective — It Is ... Pasta Cake.",
-      author: {
-        name: "Jon Kantner",
-        avatar: "/public/image/author4.jpg",
-        date: "July 14, 2022",
-      },
-    },
-  ];
+  const location = useLocation();
+  const post = location.state?.post;
+
+  if (!post) return <div className="text-center py-10">Data tidak ditemukan.</div>;
 
   return (
     <div className="w-full bg-gray-50 py-8 px-4">
-      <div className="mx-auto">
+      <div className="mx-auto max-w-3xl">
         {/* Header Section */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center">
-            <div className="w-1 h-6 bg-red-500 mr-3"></div>
-            <h1 className="text-2xl font-bold text-gray-900">Related Posts</h1>
-          </div>
-          <div className="flex items-center space-x-2">
-            <button className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow">
-              <ChevronLeft className="w-5 h-5 text-gray-600" />
-            </button>
-            <button className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow">
-              <ChevronRight className="w-5 h-5 text-gray-600" />
-            </button>
+        <div className="flex items-center mb-8">
+          <div className="w-1 h-6 bg-red-500 mr-3"></div>
+          <h1 className="text-2xl font-bold text-gray-900">{post.title}</h1>
+        </div>
+        {/* Gambar utama */}
+        {post.urlToImage && (
+          <img src={post.urlToImage} alt={post.title} className="w-full h-72 object-cover rounded-lg mb-6" />
+        )}
+        {/* Info penulis dan tanggal */}
+        <div className="flex items-center gap-3 mb-6">
+          <img src="/image/user-default.png" alt={post.author} className="w-10 h-10 rounded-full object-cover" />
+          <div>
+            <p className="font-medium text-gray-900 text-sm">{post.author || "Unknown Author"}</p>
+            <p className="text-gray-500 text-xs">{post.source?.name || "Unknown Source"}</p>
+            <p className="text-gray-500 text-xs">{new Date(post.publishedAt).toLocaleString()}</p>
           </div>
         </div>
-
-        {/* Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {posts.map((post) => (
-            <div key={post.id} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-              </div>
-
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-bold text-lg text-gray-900 mb-3 line-clamp-2 hover:text-red-600 transition-colors cursor-pointer">{post.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{post.description}</p>
-
-                {/* Author Info */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <img src={post.author.avatar} alt={post.author.name} className="w-8 h-8 rounded-full object-cover" />
-                    <div>
-                      <p className="font-medium text-gray-900 text-sm">{post.author.name}</p>
-                      <p className="text-gray-500 text-xs">{post.author.date}</p>
-                    </div>
-                  </div>
-                  <button className="p-1.5 rounded-full hover:bg-gray-100 transition-colors">
-                    <Bookmark className="w-4 h-4 text-gray-400 hover:text-red-500" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Isi berita */}
+        <div className="prose max-w-none mb-6">
+          <p className="text-lg mb-4">{post.description}</p>
+          <p className="text-base text-gray-700">{post.content}</p>
         </div>
+        {/* Link ke sumber asli */}
+        {post.url && (
+          <a href={post.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Baca di sumber asli</a>
+        )}
       </div>
     </div>
   );

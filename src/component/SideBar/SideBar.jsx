@@ -1,44 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ArticleDetail from '../artikelDetail/article-detail'
 import Comments from '../comments/Comments'
+import { getNews } from '../../api/newsApi'
 
 const SideBar = () => {
-  const dataPost = [
+  const [articles, setArticles] = useState([]);
 
-    {
-      image: '/public/image4/topPost1.jpg',
-      title: 'How to Spend the Perfect Day on Croatia’s Most Magical Island',
-      subhead: 'Subhead',
-    },
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getNews();
+      setArticles(data.articles);
+    };
+    fetchData();
+  }, []);
 
-    {
-      image: '/public/image4/topPost2.jpg',
-      title: 'How to Spend the Perfect Day on Croatia’s Most Magical Island',
-      subhead: 'Subhead',
-    },
+  function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
-    {
-      image: '/public/image4/topPost3.jpg',
-      title: 'How to Spend the Perfect Day on Croatia’s Most Magical Island',
-      subhead: 'Subhead',
-    },
-
-    {
-      image: '/public/image4/topPost4.jpg',
-      title: 'How to Spend the Perfect Day on Croatia’s Most Magical Island',
-      subhead: 'Subhead',
-    },
-
-    {
-      image: '/public/image4/topPost5.jpg',
-      title: 'How to Spend the Perfect Day on Croatia’s Most Magical Island',
-      subhead: 'Subhead',
-    },
-
-  ]
+  const randomArticles = shuffleArray(articles).slice(0, 5);
 
   return (
-
     <div className="flex flex-col-reverse lg:flex-row-reverse md:p-1 max-w-7xl mt-10 mx-auto">
       <aside className="w-full lg:w-1/3 flex flex-col items-center gap-6">
 
@@ -97,12 +84,12 @@ const SideBar = () => {
         <div className="hidden lg:block bg-[#F5F5F5] rounded-xl p-4 w-[360px] h-[598px] mt-0">
           <h3 className="font-semibold mb-5 text-xl"><span className="bg-red-600 text-red-600 rounded-full text-xs">*</span> Top Post</h3>
 
-          {dataPost.map((post, index) => (
+          {randomArticles.map((post, index) => (
             <div key={index} className="flex items-start gap-3 mb-4">
-              <img src={post.image} className="w-[87px] h-[87px] rounded-xl object-cover flex-shrink-0" />
+              <img src={post.urlToImage} className="w-[87px] h-[87px] rounded-xl object-cover flex-shrink-0" alt={post.title} />
               <div>
                 <p className="font-semibold text-sm leading-tight mt-4">{post.title}</p>
-                <p className="text-sm mt-1 text-[#3E3232BF]">{post.subhead}</p>
+                <p className="text-sm mt-1 text-[#3E3232BF]">{post.author || "Unknown Author"}</p>
               </div>
             </div>
           ))}

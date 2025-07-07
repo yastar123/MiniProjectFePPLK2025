@@ -33,7 +33,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gray-50 my-16 p-4">
+    <div className=" my-16 p-4">
       {/* Desktop Layout */}
       <div className="hidden md:block max-w-6xl mx-auto">
         <div className="grid grid-cols-2 gap-8">

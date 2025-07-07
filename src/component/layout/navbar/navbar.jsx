@@ -30,6 +30,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-6">
                         <a href="/contact" className="text-gray-700 hover:text-orange-500 cursor-pointer">Contact</a>
                         <a href="/about" className="text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
+                        <a href="/category" className="text-gray-700 hover:text-orange-500 cursor-pointer">Category</a>
                     </div>
                 </div>
 
@@ -125,6 +126,9 @@ const Navbar = () => {
                                     </div>
                                     <div>
                                         <a href="/about" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">About</a>
+                                    </div>
+                                    <div>
+                                        <a href="/category" className="py-2 text-gray-700 hover:text-orange-500 cursor-pointer">category</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { getNews } from "../../api/newsApi";
+import { Link } from "react-router-dom";
 
 const PopularPost = () => {
   const [articles, setArticles] = useState([]);
@@ -36,20 +37,25 @@ const PopularPost = () => {
 
         {/* // card */}
         <div className="flex flex-wrap gap-14 justify-center">
-          {articles.map((post, index) => (
-            // responsive2
-            <div key={index} className="rounded-xl shadow-md border-[1px] p-2 w-full max-width-[] sm:w-[640px] md:w-[720px] lg:w-[21%] ">
-              <img src={post.urlToImage} className="w-full h-40 object-fill rounded-lg mb-3" />
+          {articles.slice(0, 4).map((post, index) => (
+            <Link
+              key={index}
+              to="/detail"
+              state={{ post }}
+              className="rounded-xl shadow-md border-[1px] p-2 w-full max-width-[] sm:w-[640px] md:w-[720px] lg:w-[21%] block"
+            >
+              <img src={post.urlToImage} className="w-full h-40 object-fill rounded-lg mb-3" alt={post.title} />
               <h3 className="font-bold mb-3">{post.title}</h3>
-              <p className="text-sm line-clamp-2">{post.body}</p>
+              <p className="text-sm line-clamp-2">{post.description}</p>
 
               {/* bookmark */}
               <div className="flex items-center justify-between mt-3 bg-gray-100 rounded-md">
                 <div className="flex items-center gap-3 p-3">
-                  <img src={post.author} className="w-8 h-8 rounded-xl" />
+                  <img src="/image/user-default.png" className="w-8 h-8 rounded-xl" alt="author" />
                   <div>
-                    <p className="text-sm font-semibold">{post.name}</p>
-                    <p className="text-xs text-gray-500">{post.date}</p>
+                    <p className="text-sm font-semibold">{post.author || "Unknown Author"}</p>
+                    <p className="text-xs text-gray-500">{post.source?.name || "Unknown Source"}</p>
+                    <p className="text-xs text-gray-500">{new Date(post.publishedAt).toLocaleDateString()}</p>
                   </div>
                 </div>
 
@@ -57,7 +63,7 @@ const PopularPost = () => {
                   <img src="/image/bookmark.png" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

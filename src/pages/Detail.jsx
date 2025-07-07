@@ -1,10 +1,10 @@
 import React from "react";
-import Sidebar from "../component/sideBar/SideBar";
+import SideBar from "../component/sideBar/SideBar";
 
 const Detail = () => {
   return (
     <div>
-      <Sidebar />
+      <SideBar />
     </div>
   );
 };

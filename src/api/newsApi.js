@@ -11,7 +11,7 @@ const NewsApi = axios.create({
 });
 
 // Use environment variable for API URL, fallback to localhost for development
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://miniprojectfepplk2025-api.onrender.com";
 
 export const getNews = async () => {
   try {

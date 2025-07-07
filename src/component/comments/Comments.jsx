@@ -1,9 +1,5 @@
 'use client';
 import { useState } from 'react';
-import user1 from '../../assets/img/comments/user1.png'; 
-import user2 from '../../assets/img/comments/user2.png'; 
-import user3 from '../../assets/img/comments/user3.png'; 
-import user4 from '../../assets/img/comments/user4.png'; 
 
 const Comments = () => {
   const [comments] = useState([
@@ -11,7 +7,6 @@ const Comments = () => {
       id: 1,
       name: 'Jon Kantner',
       date: '2022 04 July',
-      avatar: user1, // Gunakan gambar yang diimpor
       content:
         "When You Are Ready To Indulge Your Sense Of Excitement, Check Out The Range Of Water Sports Opportunities At The Resort's On-Site Water Sports Center. Want To Leave Your Stress On The Water? The Resort Has Kayaks, Paddleboards, Or The Low-Key Pedal Boats.",
     },
@@ -19,7 +14,6 @@ const Comments = () => {
       id: 2,
       name: 'Cassie Evans',
       date: '2022 04 July',
-      avatar: user2,
       content: 
         "A River Or A Lake Island May Be Called An Eyot Or Ait, And A Small Island Off The Coast May Be Called A Holm. Sedimentary Islands In The Ganges Delta Are Called Chars. A Grouping Of Geographically Or Geologically Related Islands, Such As The Philippines, Is Referred To As An Archipelago.",
     },
@@ -27,7 +21,6 @@ const Comments = () => {
       id: 3,
       name: 'Behzad Pashaei',
       date: '2022 04 July',
-      avatar: user3, // Tambahkan gambar baru
       content:
         'Oceanic Islands Are Often Considered To Be Islands That Do Not Sit On Continental Shelves. Other Definitions Limit The Term To Only Refer To Islands With No Past Geological Connections To A Continental Landmass The Vast Majority Are Volcanic In Origin, Such As Saint Helena In The South Atlantic Ocean.',
     },
@@ -35,7 +28,6 @@ const Comments = () => {
       id: 4,
       name: 'Patricia',
       date: '2022 04 July',
-      avatar: user4,
       content:
         'An Island (or Isle) Is An Isolated Piece Of Habitat That Is Surrounded By A Dramatically Different Habitat, Such As Water. Very Small Islands Such As Emergent Land Features On Atolls Can Be Called Islets, Skerries, Cays Or Keys.',
     },
@@ -87,7 +79,7 @@ const Comments = () => {
             <div className="flex gap-4">
               {/* Avatar */}
               <div className="flex-shrink-0">
-                <img src={comment.avatar} alt={comment.name} className="w-12 h-12 rounded-full object-cover" />
+                <img alt={comment.name} className="w-12 h-12 rounded-full object-cover" />
               </div>
 
               {/* Comment Content */}

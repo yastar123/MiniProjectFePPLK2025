@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../component/Sidebar/SideBar";
+import Sidebar from "../component/sideBar/SideBar";
 
 const Detail = () => {
   return (
